@@ -1,0 +1,18 @@
+/* Enter your custom styles here */
+.inputClass *{
+    background: white !important;
+}
+
+.deleteIcon{
+    padding-top: 8px !important;
+}
+
+.lastColumn {
+    align-items: end !important;
+    justify-content: end !important;
+    padding-right: 50px !important;
+}
+
+.selectedColumnList{
+    background: lightskyblue;
+}

@@ -1,0 +1,4 @@
+company_code,country,currency,document_type,gl_account_header,payment_method,plant,vendor_code,tax_per,tds_per
+001,USA,USD,Invoice,1000,Wire Transfer,Factory A,V001,5%,2%
+002,Canada,CAD,Receipt,2000,Credit Card,Factory B,V002,7%,3%
+003,UK,GBP,PO,3000,Check,Factory C,V003,5.5%,2.5%

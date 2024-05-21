@@ -2,7 +2,7 @@ namespace db;
 
 entity MasterSearchHelp {
   mastervalue : String;
-  masterkey : String;
+  masterkey   : String;
 }
 
 entity Company_code {
@@ -142,4 +142,40 @@ entity Vendor_master {
       tds                : String;
       vendor_name        : String;
   key vendor_no          : String;
+}
+
+
+entity Setting {
+  key id                                       : UUID;
+      sap_or_zoho                              : String;
+      url_to_post_invoice                      : String;
+      url_to_fetch_po_detail                   : String;
+      url_to_fetch_payment_status              : String;
+      login_id                                 : String;
+      login_password                           : String;
+      enable_invoice_posting_integration       : Boolean;
+      enable_po_validation_integration         : Boolean;
+      enable_po_validation_3way_match          : Boolean;
+      send_attachments_to_erp                  : Boolean;
+      post_npo_invoice_to                      : String;
+      enable_supplier_enquiries                : Boolean;
+      enable_assignment_rules                  : Boolean;
+      enable_version_control_revised_invoices  : Boolean;
+      enable_approval_rules                    : Boolean;
+      enable_manual_qc_check                   : Boolean;
+      set_tolerance_limit_departmental_budgets : Boolean;
+      auto_schedule_ocr                        : Boolean;
+      use_aws_textract_or_paper_ai_for_ocr     : Boolean;
+      process_invoice_or_po                    : Boolean;
+      get_payment_status_from_erp              : Boolean;
+      sync_master_data                         : Boolean;
+      notification_days_before_due_date        : Integer;
+      auto_trigger_approval_if_error_free      : Boolean;
+      enable_accuracy_parameters               : Boolean;
+      enable_user_activity_tracking            : Boolean;
+      select_country                           : String;
+      set_notification_email_id                : String;
+      enter_company_gstin                      : String;
+      set_ocr_centralized_email_id             : String;
+      upload_company_logo                      : String;
 }

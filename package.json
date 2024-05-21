@@ -19,11 +19,10 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-masterui": "cds watch --open masterui/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-masterui": "cds watch --open masterui/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-settingui": "cds watch --open settingui/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
-    "requires": {
-      
-    }
+    "requires": {}
   }
 }

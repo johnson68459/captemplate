@@ -18,8 +18,10 @@ service CatalogService {
     entity Tax_code          as projection on my.Tax_code;
     entity Unit_Measures     as projection on my.Unit_Measures;
     entity Vendor_master     as projection on my.Vendor_master;
-    
+    //Setting
+    entity Setting           as projection on my.Setting;
     //function import
     function getDynamicCol(sName : String) returns String;
+    function getSettingData()              returns String;
 
 }

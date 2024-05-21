@@ -2,6 +2,7 @@ const cds = require('@sap/cds');
 
 module.exports = cds.service.impl(function () {
 
+    let { Setting } = this.entities;
 
     this.on('getDynamicCol', async (req) => {
         debugger
@@ -18,6 +19,16 @@ module.exports = cds.service.impl(function () {
 
 
         return JSON.stringify(returnData);
+    })
+    this.on('getSettingData', async (req) => {
+        debugger
+
+        var data = await SELECT.from(Setting);
+        console.log(data[0])
+
+        return JSON.stringify({
+            setting: data[0]
+        });
     })
 
 })

@@ -36,7 +36,7 @@ sap.ui.define(
                             selectedItem: oFirstItem
                         });
                     }
-                }, 50);
+                }, 300);
             },
 
             onSelectChange: async function (oEvent) {
@@ -220,7 +220,7 @@ sap.ui.define(
                     var tempDataObj = {};
                     let currObj = oRowBinding[i].getObject();
                     for (var key in currObj) {
-                        tempDataObj[aCols[j].property] = `${currObj[key]}`
+                        tempDataObj[aCols[j].property] = `${currObj[key] ?? ''}`
                         j++;
                     }
                     aRowData.push(tempDataObj);

@@ -11,7 +11,6 @@ sap.ui.define([
         return Controller.extend("settingui.controller.SettingView", {
             onInit: function () {
                 debugger
-
                 this.getView().bindElement(`/Setting(${keyid})`)
 
             },

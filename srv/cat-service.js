@@ -20,16 +20,6 @@ module.exports = cds.service.impl(function () {
 
         return JSON.stringify(returnData);
     })
-    this.on('getSettingData', async (req) => {
-        debugger
-
-        var data = await SELECT.from(Setting);
-        // console.log(data[0])
-
-        return JSON.stringify({
-            setting: data[0]
-        });
-    })
     this.on('PUT', Setting, async (req, next) => {
         debugger
         var filename =  req.headers?.slug;

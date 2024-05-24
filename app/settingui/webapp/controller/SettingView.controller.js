@@ -15,30 +15,6 @@ sap.ui.define([
                 this.getView().bindElement(`/Setting(${keyid})`)
 
             },
-            onBeforeRendering: async function (oEvent) {
-                debugger
-
-
-
-
-                // var oFunc = this.getView().getModel().bindContext("/getSettingData(...)");
-                // await oFunc.execute()
-                // var result = oFunc.getBoundContext().getValue().value;
-                // result = JSON.parse(result);
-                // let settingdata = result.setting;
-
-                // let oModel = new sap.ui.model.json.JSONModel(settingdata);
-
-                // // Set the model to the view
-                // this.getView().setModel(oModel, "settingData");
-
-
-
-            },
-            onAfterRendering: function (oEvent) {
-                // debugger
-
-            },
             onBackEndSelect: function (oEvent) {
                 debugger
                 let selectedkey = oEvent.getSource().getSelectedKey();

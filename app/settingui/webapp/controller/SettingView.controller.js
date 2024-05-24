@@ -23,7 +23,7 @@ sap.ui.define([
                 let oModel = new sap.ui.model.json.JSONModel(settingdata);
 
                 // Set the model to the view
-                this.getView().setModel(oModel,"settingData");
+                this.getView().setModel(oModel, "settingData");
 
 
 
@@ -48,6 +48,49 @@ sap.ui.define([
                     }
                 }
 
+            },
+            handleUploadComplete: function (oEvent) {
+                debugger
+                var sResponse = oEvent.mParameters.status;
+                if (sResponse == 204) {
+                    sap.m.MessageToast.show("uploaded")
+                }    			// var sResponse = oEvent.getParameter("response"),
+                // 	aRegexResult = /\d{4}/.exec(sResponse),
+                // 	iHttpStatusCode = aRegexResult && parseInt(aRegexResult[0]),
+                // 	sMessage;
+
+                // if (sResponse) {
+                // 	sMessage = iHttpStatusCode === 200 ? sResponse + " (Upload Success)" : sResponse + " (Upload Error)";
+                // 	MessageToast.show(sMessage);
+                // }
+            },
+            changefile: function (oEvent) {
+                debugger
+                // var oFileUploader = oEvent.oSource.oParent.mAggregations.content[0]
+                var oFileUploader = this.byId("fileupload1")
+                oFileUploader.removeAllHeaderParameters()
+                var headPar = new sap.ui.unified.FileUploaderParameter();
+                headPar.setName('slug');
+                headPar.setValue(oEvent.mParameters.newValue);
+                // oFileUploader.removeHeaderParameter('slug');
+
+                oFileUploader.addHeaderParameter(headPar);
+                var sUploadUri = "/odata/v4/catalog/Setting(id=123e4567-e89b-12d3-a456-426614174000)/content";
+                // var sUploadUri = oExtensionAPI._controller.extensionAPI._controller._oAppComponent.getManifestObject().resolveUri("./StudentsSrv/ExcelUpload/excel")
+                oFileUploader.setUploadUrl(sUploadUri);
+                oFileUploader
+                    .checkFileReadable()
+                    .then(async function () {
+                        var test = await oFileUploader.upload();
+                        console.log();
+                    })
+                    .catch(function (error) {
+                        debugger
+
+                        // showError("The file cannot be read.");
+                        // oUploadDialog.setBusy(bBusy)
+                        // setDialogBusy(false)
+                    })
             }
         });
     });

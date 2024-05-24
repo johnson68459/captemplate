@@ -178,4 +178,9 @@ entity Setting {
       enter_company_gstin                      : String;
       set_ocr_centralized_email_id             : String;
       upload_company_logo                      : String;
+      @Core.MediaType  : mediaType
+      content                                  : LargeBinary;
+      @Core.IsMediaType: true
+      mediaType                                : String ;
+      filename:String;
 }

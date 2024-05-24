@@ -30,5 +30,13 @@ module.exports = cds.service.impl(function () {
             setting: data[0]
         });
     })
+    this.on('PUT', Setting, async (req, next) => {
+        debugger
+        var filename =  req.headers.slug;
+        if(filename){
+        req.data.filename = filename
+        }
+        return next();
+    });
 
 })

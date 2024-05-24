@@ -186,7 +186,7 @@
                     <HBox class="labelInputContainer">
                         <Text text="UPLOAD COMPANY LOGO" />
                         <HBox >
-                            <Input editable="false" textAlign="Center" value="{filename}" />
+                            <Input editable="false" textAlign="Center" value="{= ${filename} ? ${filename} : 'No file' }" />
                             <unified:FileUploader id="fileupload1" maximumFileSize="1.00" buttonOnly="true" fileType= "png,jpeg" fileSizeExceed="onFileSizeExceeded" multiple="false" uploadUrl="/odata/v4/catalog/Setting(id=123e4567-e89b-12d3-a456-426614174000)/content" useMultipart="false" httpRequestMethod='Put' sendXHR= 'true' uploadComplete="handleUploadComplete" change="changefile" />
                         </HBox>
                     </HBox>

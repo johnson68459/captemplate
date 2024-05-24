@@ -32,7 +32,7 @@ module.exports = cds.service.impl(function () {
     })
     this.on('PUT', Setting, async (req, next) => {
         debugger
-        var filename =  req.headers.slug;
+        var filename =  req.headers?.slug;
         if(filename){
         req.data.filename = filename
         }

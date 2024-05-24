@@ -24,7 +24,7 @@ module.exports = cds.service.impl(function () {
         debugger
 
         var data = await SELECT.from(Setting);
-        console.log(data[0])
+        // console.log(data[0])
 
         return JSON.stringify({
             setting: data[0]

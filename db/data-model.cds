@@ -165,8 +165,8 @@ entity Setting {
       enable_manual_qc_check                   : Boolean;
       set_tolerance_limit_departmental_budgets : Boolean;
       auto_schedule_ocr                        : Boolean;
-      use_aws_textract_or_paper_ai_for_ocr     : Boolean;
-      process_invoice_or_po                    : Boolean;
+      use_aws_textract_or_paper_ai_for_ocr     : String;
+      process_invoice_or_po                    : String;
       get_payment_status_from_erp              : Boolean;
       sync_master_data                         : Boolean;
       notification_days_before_due_date        : Integer;

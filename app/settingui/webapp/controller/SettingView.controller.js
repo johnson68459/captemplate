@@ -7,23 +7,30 @@ sap.ui.define([
     function (Controller) {
         "use strict";
 
+        var keyid = '123e4567-e89b-12d3-a456-426614174000';
         return Controller.extend("settingui.controller.SettingView", {
             onInit: function () {
-                // debugger
+                debugger
+
+                this.getView().bindElement(`/Setting(${keyid})`)
 
             },
             onBeforeRendering: async function (oEvent) {
                 debugger
-                var oFunc = this.getView().getModel().bindContext("/getSettingData(...)");
-                await oFunc.execute()
-                var result = oFunc.getBoundContext().getValue().value;
-                result = JSON.parse(result);
-                let settingdata = result.setting;
 
-                let oModel = new sap.ui.model.json.JSONModel(settingdata);
 
-                // Set the model to the view
-                this.getView().setModel(oModel, "settingData");
+
+
+                // var oFunc = this.getView().getModel().bindContext("/getSettingData(...)");
+                // await oFunc.execute()
+                // var result = oFunc.getBoundContext().getValue().value;
+                // result = JSON.parse(result);
+                // let settingdata = result.setting;
+
+                // let oModel = new sap.ui.model.json.JSONModel(settingdata);
+
+                // // Set the model to the view
+                // this.getView().setModel(oModel, "settingData");
 
 
 
@@ -35,6 +42,7 @@ sap.ui.define([
             onBackEndSelect: function (oEvent) {
                 debugger
                 let selectedkey = oEvent.getSource().getSelectedKey();
+
                 var contentVbox = this.byId("contentVbox");
                 if (selectedkey != 'SAP') {
 
@@ -53,7 +61,7 @@ sap.ui.define([
                 debugger
                 var sResponse = oEvent.mParameters.status;
                 if (sResponse == 204) {
-                    sap.m.MessageToast.show("uploaded")
+                    sap.m.MessageToast.show("File Uploaded")
                 }    			// var sResponse = oEvent.getParameter("response"),
                 // 	aRegexResult = /\d{4}/.exec(sResponse),
                 // 	iHttpStatusCode = aRegexResult && parseInt(aRegexResult[0]),
@@ -63,6 +71,7 @@ sap.ui.define([
                 // 	sMessage = iHttpStatusCode === 200 ? sResponse + " (Upload Success)" : sResponse + " (Upload Error)";
                 // 	MessageToast.show(sMessage);
                 // }
+                oEvent.getSource().getParent().getItems()[0].getBindingContext().refresh()
             },
             changefile: function (oEvent) {
                 debugger
@@ -75,7 +84,7 @@ sap.ui.define([
                 // oFileUploader.removeHeaderParameter('slug');
 
                 oFileUploader.addHeaderParameter(headPar);
-                var sUploadUri = "/odata/v4/catalog/Setting(id=123e4567-e89b-12d3-a456-426614174000)/content";
+                var sUploadUri = `/odata/v4/catalog/Setting(id=${keyid})/content`;
                 // var sUploadUri = oExtensionAPI._controller.extensionAPI._controller._oAppComponent.getManifestObject().resolveUri("./StudentsSrv/ExcelUpload/excel")
                 oFileUploader.setUploadUrl(sUploadUri);
                 oFileUploader
@@ -91,6 +100,13 @@ sap.ui.define([
                         // oUploadDialog.setBusy(bBusy)
                         // setDialogBusy(false)
                     })
+            },
+            onFileSizeExceeded: function (oEvent) {
+                debugger
+                sap.m.MessageToast.show("File Size Exceeded")
+            },
+            onSelectChangeFun: function (oEvent) {
+                debugger
             }
         });
     });

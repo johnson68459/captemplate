@@ -68,6 +68,7 @@ sap.ui.define(
                 for (let i = 0; i < result.length; i++) {
                     debugger
                     myTable.addColumn(new sap.m.Column({
+                        styleClass: 'columnStyleClass',
                         hAlign: "Center",
                         header: new sap.m.Text({ text: `${formatCompanyCode(result[i])}` })
                     }));
@@ -111,7 +112,7 @@ sap.ui.define(
                                         }
                                     }),
                                     new sap.ui.core.Icon({
-                                        src: "sap-icon://delete", press: function (oEvent) {
+                                        src: "sap-icon://delete", color: "red", press: function (oEvent) {
                                             debugger
                                             var oSelectedItem = oEvent.getSource().getParent().getParent();
                                             var selectedContext = oSelectedItem.getBindingContext();

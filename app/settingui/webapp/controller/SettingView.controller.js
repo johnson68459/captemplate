@@ -14,6 +14,18 @@ sap.ui.define([
                 this.getView().bindElement(`/Setting(${keyid})`)
 
             },
+            onAfterRendering:function (oEvent) {
+              debugger
+              let inputtest = this.byId("setnotemail");
+            
+            //   inputtest.onsapfocusleave(new jQuery.Event())
+            var MessageToast = sap.m.MessageToast;
+
+              inputtest.attachBrowserEvent("focusout", (test)=>{
+                debugger
+                MessageToast.show("Updated")
+              });
+            },
             onBackEndSelect: function (oEvent) {
                 debugger
                 let selectedkey = oEvent.getSource().getSelectedKey();

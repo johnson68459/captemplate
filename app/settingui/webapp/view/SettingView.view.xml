@@ -8,7 +8,7 @@
 
         <content >
             <VBox class="titleVbox">
-                <Title text="Customise Parameters"/>
+                <Title text="Customize Parameters"/>
             </VBox>
             <VBox id="contentVbox" class="vboxWithBorder">
                 <items>
@@ -173,7 +173,7 @@
                     </HBox>
                     <HBox class="labelInputContainer">
                         <Text text="SET NOTIFICATION EMAIL ID" />
-                        <Input value="{set_notification_email_id}" />
+                        <Input id="setnotemail" value="{set_notification_email_id}" />
                     </HBox>
                     <HBox class="labelInputContainer">
                         <Text text="ENTER COMPANY GSTIN" />
@@ -192,6 +192,11 @@
                     </HBox>
                 </items>
             </VBox>
+            <!-- <OverflowToolbar class="overFlowToolbar">
+                <ToolbarSpacer />
+                <Button type="Emphasized" text="Save" press="onSave"></Button>
+                <Button type="Emphasized" text="Cancel" press="onCancel"></Button>
+            </OverflowToolbar> -->
 
 
         </content>

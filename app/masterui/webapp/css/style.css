@@ -46,6 +46,8 @@
 .myTable .sapMTableTHead * {
   background-color: #009879;
   color: #ffffff;
+  font-size: medium;
+  font-weight: 900 !important;
 }
 
 .headerTitle {

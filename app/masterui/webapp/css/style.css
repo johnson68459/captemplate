@@ -19,7 +19,7 @@
 } */
 
 .selectedColumnList {
-  background-color: #e0f7fa !important; /* Light cyan background */
+  background-color: #6dcdb1 !important; /* Light cyan background */
   color: #004d40 !important; /* Dark teal text */
   border-left: 4px solid #004d40; /* Dark teal left border */
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle inner shadow */
@@ -55,11 +55,12 @@
   padding-top: 3%;
   font-weight: 900;
   font-size: 50px;
-  color: #333; 
-  text-align: left; 
+  color: #333;
+  text-align: left;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.headerVboxClass,#container-masterui---MasterView--overflow {
+.headerVboxClass,
+#container-masterui---MasterView--overflow {
   background-color: white !important;
 }

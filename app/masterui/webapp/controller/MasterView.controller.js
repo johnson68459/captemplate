@@ -164,39 +164,6 @@ sap.ui.define(
                 });
 
             },
-            onExcelUpload: function (oEvent) {
-                debugger
-                var file = oEvent.getParameter("files")[0];
-                var oMainTable = this.byId("myTable");
-                if (file) {
-                    var reader = new FileReader();
-
-                    reader.onload = function (oEvent) {
-                        debugger;
-                        var arrayBuffer = oEvent.target.result;
-
-                        // Process the ArrayBuffer using the XLSX library
-                        var workbook = XLSX.read(arrayBuffer, { type: 'array' });
-
-                        // Example: Access the first worksheet
-                        var firstSheetName = workbook.SheetNames[0];
-                        var worksheet = workbook.Sheets[firstSheetName];
-
-                        // Convert the worksheet to JSON
-                        var excelData = XLSX.utils.sheet_to_json(worksheet);
-
-                        // Now you can use excelData for further processing
-                        console.log(excelData);
-
-                    };
-
-                    debugger;
-
-                    // Read the file as an ArrayBuffer
-                    reader.readAsArrayBuffer(file);
-
-                }
-            },
             onExcelExport: function (oEvent) {
                 debugger
                 var myTable = this.byId("myTable");

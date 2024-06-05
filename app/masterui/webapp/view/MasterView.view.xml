@@ -8,9 +8,9 @@
                 <Title class="headerTitle" text="Master"></Title>
             </VBox>
 
-            <OverflowToolbar id="overflow" >
+            <OverflowToolbar id="overflow">
                 <ToolbarSpacer />
-                <core:Icon src="sap-icon://excel-attachment" press="onExcelExport"></core:Icon>
+                <core:Icon src="sap-icon://excel-attachment" useIconTooltip="true" tooltip="Export Excel Data" press="onExcelExport"></core:Icon>
                 <Select id="selectitems" selectedKey="Company_code" items="{/MasterSearchHelp}" change="onSelectChange">
                     <items>
                         <core:Item key="{masterkey}" text="{mastervalue}"></core:Item>
@@ -18,7 +18,7 @@
                 </Select>
             </OverflowToolbar>
 
-            <Table id="myTable" contextualWidth="Auto" growing="true" growingThreshold="10"  class="myTable" sticky="ColumnHeaders,HeaderToolbar" items="{/Company_code}">
+            <Table id="myTable" contextualWidth="Auto" growing="true" growingThreshold="10" class="myTable" sticky="ColumnHeaders,HeaderToolbar" items="{/Company_code}">
                 <headerToolbar>
 
                 </headerToolbar>
